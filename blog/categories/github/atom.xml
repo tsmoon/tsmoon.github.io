@@ -4,7 +4,7 @@
   <title><![CDATA[Category: github | 海空的技术博客]]></title>
   <link href="http://tsmoon.github.io/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://tsmoon.github.io/"/>
-  <updated>2014-03-02T17:32:21+08:00</updated>
+  <updated>2014-03-02T20:16:28+08:00</updated>
   <id>http://tsmoon.github.io/</id>
   <author>
     <name><![CDATA[tsmoon]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[GitHub搭建博客]]></title>
-    <link href="http://tsmoon.github.io/blog/2014/03/02/100-hello-github-blog/"/>
+    <link href="http://tsmoon.github.io/blog/20140302/100-hello-github-blog/"/>
     <updated>2014-03-02T16:14:29+08:00</updated>
-    <id>http://tsmoon.github.io/blog/2014/03/02/100-hello-github-blog</id>
+    <id>http://tsmoon.github.io/blog/20140302/100-hello-github-blog</id>
     <content type="html"><![CDATA[<p>github博客搭建方法及常用命令</p>
 
 <!-- more -->
@@ -27,22 +27,24 @@
 
 <ol>
 <li><a href="http://beyondvincent.com/blog/2013/07/27/107-hello-page-of-github/">搭建</a></li>
-<li><a href="http://biaobiaoqi.me/blog/2013/07/10/decorate-octopress/">配置</a>,非常有用</li>
+<li><a href="http://biaobiaoqi.me/blog/2013/07/10/decorate-octopress/">配置</a>  <a href="http://www.yanjiuyanjiu.com/blog/20130402/">另外一个配置</a></li>
 <li><a href="http://octopress.org/docs/">octopress官网</a></li>
-<li><a href="http://www.heqingbao.com/blog/2014/01/18/zai-duo-tai-dian-nao-shang-xie-octopressbo-ke/">在多台电脑商写Octopress博客</a></li>
+<li><a href="http://www.heqingbao.com/blog/2014/01/18/zai-duo-tai-dian-nao-shang-xie-octopressbo-ke/">在多台电脑上写Octopress博客</a></li>
+<li><a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">博客主题github</a></li>
+<li><a href="http://www.yangzhiping.com/tech/writing-space.html">理想的写作环境：Git+Github+Markdown+Jekyll</a></li>
+<li><a href="http://octopress.org/docs/blogging/code/">语法高亮</a></li>
 </ol>
 
 
-<h4>博客常用命令</h4>
-
-<pre><code>rake new_post["New Post"] 
+<p><code>plain 博客常用命令
+rake new_post["New Post"]
 rake generate
 git add .
-git commit -am "Some comment here." 
+git commit -am "Some comment here."
 git push origin source
 git preview
 rake deploy
-</code></pre>
+</code></p>
 ]]></content>
   </entry>
   

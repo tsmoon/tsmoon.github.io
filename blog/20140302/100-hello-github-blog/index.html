@@ -10,11 +10,19 @@
 
   
   <meta name="description" content="github博客搭建方法及常用命令 博客搭建教程: 搭建
-配置,非常有用
+配置 另外一个配置
 octopress官网
-在多台电脑商写Octopress博客 博客常用命令 rake new_post["New Post"] rake generate
-git add .
-git commit -am "Some &hellip;">
+在多台电脑上写Octopress博客
+博客主题github
+理想的写作环境：Git+Github+Markdown+Jekyll
+语法高亮 博客常用命令1
+2
+3
+4
+5
+6
+7
+rake &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -23,7 +31,7 @@ git commit -am "Some &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tsmoon.github.io/blog/2014/03/02/100-hello-github-blog/">
+  <link rel="canonical" href="http://tsmoon.github.io/blog/20140302/100-hello-github-blog/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -35,15 +43,23 @@ git commit -am "Some &hellip;">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 -->
 <script type="text/javascript">
-	function addBlankTargetForLinks () {
-	  $('a[href^="http"]').each(function(){
-	      $(this).attr('target', '_blank');
-	  });
-	}
 
-	$(document).bind('DOMNodeInserted', function(event) {
-	  addBlankTargetForLinks();
-	});
+function addBlankTargetForLinks () {
+
+  $('a[href^="http"]').each(function(){
+
+      $(this).attr('target', '_blank');
+
+  });
+
+}
+
+$(document).bind('DOMNodeInserted', function(event) {
+
+  addBlankTargetForLinks();
+
+});
+
 </script>
   
 
@@ -115,26 +131,36 @@ git commit -am "Some &hellip;">
 
 <ol>
 <li><a href="http://beyondvincent.com/blog/2013/07/27/107-hello-page-of-github/">搭建</a></li>
-<li><a href="http://biaobiaoqi.me/blog/2013/07/10/decorate-octopress/">配置</a>,非常有用</li>
+<li><a href="http://biaobiaoqi.me/blog/2013/07/10/decorate-octopress/">配置</a>  <a href="http://www.yanjiuyanjiu.com/blog/20130402/">另外一个配置</a></li>
 <li><a href="http://octopress.org/docs/">octopress官网</a></li>
-<li><a href="http://www.heqingbao.com/blog/2014/01/18/zai-duo-tai-dian-nao-shang-xie-octopressbo-ke/">在多台电脑商写Octopress博客</a></li>
+<li><a href="http://www.heqingbao.com/blog/2014/01/18/zai-duo-tai-dian-nao-shang-xie-octopressbo-ke/">在多台电脑上写Octopress博客</a></li>
+<li><a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">博客主题github</a></li>
+<li><a href="http://www.yangzhiping.com/tech/writing-space.html">理想的写作环境：Git+Github+Markdown+Jekyll</a></li>
+<li><a href="http://octopress.org/docs/blogging/code/">语法高亮</a></li>
 </ol>
 
 
-<h4>博客常用命令</h4>
+<figure class='code'><figcaption><span>博客常用命令</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["New Post"] 
+</span><span class='line'>rake generate
+</span><span class='line'>git add .
+</span><span class='line'>git commit -am "Some comment here." 
+</span><span class='line'>git push origin source
+</span><span class='line'>git preview
+</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>rake new_post["New Post"] 
-rake generate
-git add .
-git commit -am "Some comment here." 
-git push origin source
-git preview
-rake deploy
-</code></pre>
+
+
 
 <p class='post-footer'>
             原始地址
-            <a href='http://tsmoon.github.io/blog/2014/03/02/100-hello-github-blog/'>http://tsmoon.github.io/blog/2014/03/02/100-hello-github-blog/</a><br/>
+            <a href='http://tsmoon.github.io/blog/20140302/100-hello-github-blog/'>http://tsmoon.github.io/blog/20140302/100-hello-github-blog/</a><br/>
             &nbsp;written by <a href='http://tsmoon.github.io'>tsmoon</a>
             &nbsp;posted at <a href='http://tsmoon.github.io'>http://tsmoon.github.io</a>
             </p>
@@ -182,6 +208,10 @@ rake deploy
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/20140302/learn-github/" title="Previous Post: Learn Github">&laquo; Learn Github</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/20140302/good-link/" title="Next Post: 好的博客和文档">好的博客和文档 &raquo;</a>
       
     </p>
   </footer>
@@ -192,20 +222,48 @@ rake deploy
 <aside class="sidebar">
   
     <section>
+  <h1>About Me</h1>
+  <p>菜鸟一个.</p>
+</section>
+<section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/03/02/100-hello-github-blog/">GitHub搭建博客</a>
+        <a href="/blog/20140302/good-link/">好的博客和文档</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20140302/100-hello-github-blog/">GitHub搭建博客</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20140302/learn-github/">Learn Github</a>
       </li>
     
   </ul>
 </section>
+<section>
+  <h1>常用链接</h1>
+  <ul>
+    <li>
+      <a href="http://coolshell.cn/" target="_blank">酷壳CoolShell</a>
+    </li>
+    <li>
+      <a href="http://mindhacks.cn/" target="_blank">刘未鹏MIND HACKS</a>
+    </li>
+    <li>
+      <a href="http://blog.codingnow.com/" target="_blank">云风</a>
+    </li>
+    <li>
+      <a href="http://www.cnblogs.com/Solstice/" target="_blank">陈硕</a>
+    </li>
+	<li>
+      <a href="http://www.yangzhiping.com/" target="_blank">阳志平的个人网站</a>
+    </li>
 
-
-
-
-
+  </ul>
+</section>
   
 </aside>
 
