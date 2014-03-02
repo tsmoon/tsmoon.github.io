@@ -101,3 +101,5 @@ facebook_like: false
 #多说插件
 duoshuo_comments: true
 duoshuo_short_name:	tsmoon
+#copyright 信息
+original_url_pre: 原始地址
