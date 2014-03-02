@@ -5,15 +5,16 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hello-github-blog - 海空的技术博客</title>
+  <title>GitHub搭建博客 - 海空的技术博客</title>
   <meta name="author" content="tsmoon">
 
   
-  <meta name="description" content="GitHub搭建博客 主要参考 博客搭建教程: 搭建
-配置 博客常用命令 rake new_post["New Post"] rake generate
+  <meta name="description" content="github博客搭建方法及常用命令 博客搭建教程: 搭建
+配置,非常有用
+octopress官网
+在多台电脑商写Octopress博客 博客常用命令 rake new_post["New Post"] rake generate
 git add .
-git commit -am "Some comment here." git push origin source
-git &hellip;">
+git commit -am "Some &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,18 +23,28 @@ git &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tsmoon.github.io/blog/2014/03/02/100-hello-github-blog">
+  <link rel="canonical" href="http://tsmoon.github.io/blog/2014/03/02/100-hello-github-blog/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="海空的技术博客" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="海空的技术博客" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts 
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 -->
+<script type="text/javascript">
+	function addBlankTargetForLinks () {
+	  $('a[href^="http"]').each(function(){
+	      $(this).attr('target', '_blank');
+	  });
+	}
+
+	$(document).bind('DOMNodeInserted', function(event) {
+	  addBlankTargetForLinks();
+	});
+</script>
   
 
 </head>
@@ -72,7 +83,7 @@ git &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Hello-github-blog</h1>
+      <h1 class="entry-title">GitHub搭建博客</h1>
     
     
       <p class="meta">
@@ -95,15 +106,18 @@ git &hellip;">
   </header>
 
 
-<div class="entry-content"><h1>GitHub搭建博客</h1>
+<div class="entry-content"><p>github博客搭建方法及常用命令</p>
 
-<h2>主要参考</h2>
+<!-- more -->
+
 
 <h3>博客搭建教程:</h3>
 
 <ol>
 <li><a href="http://beyondvincent.com/blog/2013/07/27/107-hello-page-of-github/">搭建</a></li>
-<li><a href="http://biaobiaoqi.me/blog/2013/07/10/decorate-octopress/">配置</a></li>
+<li><a href="http://biaobiaoqi.me/blog/2013/07/10/decorate-octopress/">配置</a>,非常有用</li>
+<li><a href="http://octopress.org/docs/">octopress官网</a></li>
+<li><a href="http://www.heqingbao.com/blog/2014/01/18/zai-duo-tai-dian-nao-shang-xie-octopressbo-ke/">在多台电脑商写Octopress博客</a></li>
 </ol>
 
 
@@ -117,6 +131,14 @@ git push origin source
 git preview
 rake deploy
 </code></pre>
+
+<p class='post-footer'>
+            原始地址
+            <a href='http://tsmoon.github.io/blog/2014/03/02/100-hello-github-blog/'>http://tsmoon.github.io/blog/2014/03/02/100-hello-github-blog/</a><br/>
+            &nbsp;written by <a href='http://tsmoon.github.io'>tsmoon</a>
+            &nbsp;posted at <a href='http://tsmoon.github.io'>http://tsmoon.github.io</a>
+            </p>
+
 </div>
 
 
@@ -144,7 +166,7 @@ rake deploy
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/github-blog/'>github,blog</a>
+    <a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/github/'>github</a>
   
 </span>
 
@@ -174,7 +196,7 @@ rake deploy
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/03/02/100-hello-github-blog/">Hello-github-blog</a>
+        <a href="/blog/2014/03/02/100-hello-github-blog/">GitHub搭建博客</a>
       </li>
     
   </ul>
@@ -188,31 +210,13 @@ rake deploy
 </aside>
 
 
-  <section>
-    <h1>Comments</h1>
-    <div id="comments" aria-live="polite"><!-- Duoshuo Comment BEGIN -->
-	<div class="ds-thread"></div>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"tsmoon"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = 'http://static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		|| document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- Duoshuo Comment END --></div>
-  </section>
-
-
-
     </div>
   </div>
   <footer role="contentinfo"><p>
   Copyright &copy; 2014 - tsmoon -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  - <span class="credit">Theme by <a href="http://www.gehaxelt.in">Gehaxelt</a></span>
+  <span class="credit">and <a href="http://www.it-solutions-neef.de">IT Solutions Neef</a></span>
 </p>
 
 </footer>
