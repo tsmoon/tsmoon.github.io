@@ -1,7 +1,0 @@
----
-layout: post
-title: "test"
-date: 2014-02-18 19:13:35 +0800
-comments: true
-categories: 
----
