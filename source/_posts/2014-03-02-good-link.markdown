@@ -1,0 +1,11 @@
+---
+layout: post
+title: "好的博客和文档"
+date: 2014-03-02 19:52:20 +0800
+comments: true
+categories: 
+---
+####好的文章和资料,替代本地收藏夹
+<!-- more -->
+好的文章
+1. [Mac入门笔记（6）：优质课程](http://www.yangzhiping.com/tech/mac6.html)
