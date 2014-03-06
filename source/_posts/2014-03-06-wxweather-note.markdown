@@ -16,7 +16,7 @@ categories:
 2. 超类继承MTLModel,并实现协议MTLJSONSerializing>
 3. json字段到ObjC字段映射对应,实现静态方法+(NSDictionary*) JSONKeyPathsByPropertyKey
 
-```
+``` objc
 +(NSDictionary*) JSONKeyPathsByPropertyKey{
     return @{
              @"date": @"dt",
@@ -38,7 +38,7 @@ categories:
 
 4. 若属性字段需要转换,定义静态"属性名+JSONTransformer"方法,此方法用来对特定属性名称进行转化(若多层级中属性名相同,但转换不同,如何处理?)
 
-```
+``` objc
 + (NSValueTransformer *)dateJSONTransformer {
     // 1
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
@@ -52,7 +52,7 @@ categories:
 
 对JSON数组的示例
 
-```
+``` objc
 + (NSValueTransformer *)conditionDescriptionJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray *values) {
         return [values firstObject];
