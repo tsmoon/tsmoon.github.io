@@ -4,7 +4,7 @@
   <title><![CDATA[海空的技术博客]]></title>
   <link href="http://tsmoon.github.io/atom.xml" rel="self"/>
   <link href="http://tsmoon.github.io/"/>
-  <updated>2014-03-02T20:16:28+08:00</updated>
+  <updated>2014-03-06T20:23:50+08:00</updated>
   <id>http://tsmoon.github.io/</id>
   <author>
     <name><![CDATA[tsmoon]]></name>
@@ -12,6 +12,115 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[学习天气Demo笔记]]></title>
+    <link href="http://tsmoon.github.io/blog/20140306/wxweather-note/"/>
+    <updated>2014-03-06T20:07:03+08:00</updated>
+    <id>http://tsmoon.github.io/blog/20140306/wxweather-note</id>
+    <content type="html"><![CDATA[<h3>学习天气Demo</h3>
+
+<p><a href="http://sjpsega.com/blog/2014/02/11/yi--ios-7-best-practices-part-1/">教程地址</a></p>
+
+<h4>使用MTLModel</h4>
+
+<h6>作用将Json转化为Objc对象,使用方法</h6>
+
+<ol>
+<li>导入头文件Mantle.h</li>
+<li>超类继承MTLModel,并实现协议MTLJSONSerializing></li>
+<li>json字段到ObjC字段映射对应,实现静态方法+(NSDictionary*) JSONKeyPathsByPropertyKey</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>+(NSDictionary*) JSONKeyPathsByPropertyKey{
+</span><span class='line'>    return @{
+</span><span class='line'>             @"date": @"dt",
+</span><span class='line'>             @"locationName": @"name",
+</span><span class='line'>             @"humidity": @"main.humidity",
+</span><span class='line'>             @"temperature": @"main.temp",
+</span><span class='line'>             @"tempHigh": @"main.temp_max",
+</span><span class='line'>             @"tempLow": @"main.temp_min",
+</span><span class='line'>             @"sunrise": @"sys.sunrise",
+</span><span class='line'>             @"sunset": @"sys.sunset",
+</span><span class='line'>             @"conditionDescription": @"weather.description",
+</span><span class='line'>             @"condition": @"weather.main",
+</span><span class='line'>             @"icon": @"weather.icon",
+</span><span class='line'>             @"windBearing": @"wind.deg",
+</span><span class='line'>             @"windSpeed": @"wind.speed"
+</span><span class='line'>             };
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>若属性字段需要转换,定义静态&#8221;属性名+JSONTransformer&#8221;方法,此方法用来对特定属性名称进行转化(若多层级中属性名相同,但转换不同,如何处理?)</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>+ (NSValueTransformer *)dateJSONTransformer {
+</span><span class='line'>    // 1
+</span><span class='line'>    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
+</span><span class='line'>        return [NSDate dateWithTimeIntervalSince1970:str.floatValue];
+</span><span class='line'>    } reverseBlock:^(NSDate *date) {
+</span><span class='line'>        return [NSString stringWithFormat:@"%f",[date timeIntervalSince1970]];
+</span><span class='line'>    }];
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>对JSON数组的示例</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>+ (NSValueTransformer *)conditionDescriptionJSONTransformer {
+</span><span class='line'>    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray *values) {
+</span><span class='line'>        return [values firstObject];
+</span><span class='line'>    } reverseBlock:^(NSString *str) {
+</span><span class='line'>        return @[str];
+</span><span class='line'>    }];
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p class='post-footer'>
+            原始地址
+            <a href='http://tsmoon.github.io/blog/20140306/wxweather-note/'>http://tsmoon.github.io/blog/20140306/wxweather-note/</a><br/>
+            &nbsp;written by <a href='http://tsmoon.github.io'>tsmoon</a>
+            &nbsp;posted at <a href='http://tsmoon.github.io'>http://tsmoon.github.io</a>
+            </p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[好的博客和文档]]></title>
