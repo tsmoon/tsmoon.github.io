@@ -115,6 +115,9 @@ $(document).bind('DOMNodeInserted', function(event) {
 
 <p><a href="http://sjpsega.com/blog/2014/02/11/yi--ios-7-best-practices-part-1/">教程地址</a></p>
 
+<!--more-->
+
+
 <h4>使用MTLModel</h4>
 
 <h6>作用将Json转化为Objc对象,使用方法</h6>
@@ -126,7 +129,7 @@ $(document).bind('DOMNodeInserted', function(event) {
 </ol>
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -143,23 +146,24 @@ $(document).bind('DOMNodeInserted', function(event) {
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
 <span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>+(NSDictionary*) JSONKeyPathsByPropertyKey{
-</span><span class='line'>    return @{
-</span><span class='line'>             @"date": @"dt",
-</span><span class='line'>             @"locationName": @"name",
-</span><span class='line'>             @"humidity": @"main.humidity",
-</span><span class='line'>             @"temperature": @"main.temp",
-</span><span class='line'>             @"tempHigh": @"main.temp_max",
-</span><span class='line'>             @"tempLow": @"main.temp_min",
-</span><span class='line'>             @"sunrise": @"sys.sunrise",
-</span><span class='line'>             @"sunset": @"sys.sunset",
-</span><span class='line'>             @"conditionDescription": @"weather.description",
-</span><span class='line'>             @"condition": @"weather.main",
-</span><span class='line'>             @"icon": @"weather.icon",
-</span><span class='line'>             @"windBearing": @"wind.deg",
-</span><span class='line'>             @"windSpeed": @"wind.speed"
-</span><span class='line'>             };
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">+</span><span class="p">(</span><span class="n">NSDictionary</span><span class="o">*</span><span class="p">)</span> <span class="nf">JSONKeyPathsByPropertyKey</span><span class="p">{</span>
+</span><span class='line'>    <span class="k">return</span> <span class="err">@</span><span class="p">{</span>
+</span><span class='line'>             <span class="s">@&quot;date&quot;</span><span class="o">:</span> <span class="s">@&quot;dt&quot;</span><span class="p">,</span>
+</span><span class='line'>             <span class="s">@&quot;locationName&quot;</span><span class="o">:</span> <span class="s">@&quot;name&quot;</span><span class="p">,</span>
+</span><span class='line'>             <span class="s">@&quot;humidity&quot;</span><span class="o">:</span> <span class="s">@&quot;main.humidity&quot;</span><span class="p">,</span>
+</span><span class='line'>             <span class="s">@&quot;temperature&quot;</span><span class="o">:</span> <span class="s">@&quot;main.temp&quot;</span><span class="p">,</span>
+</span><span class='line'>             <span class="s">@&quot;tempHigh&quot;</span><span class="o">:</span> <span class="s">@&quot;main.temp_max&quot;</span><span class="p">,</span>
+</span><span class='line'>             <span class="s">@&quot;tempLow&quot;</span><span class="o">:</span> <span class="s">@&quot;main.temp_min&quot;</span><span class="p">,</span>
+</span><span class='line'>             <span class="s">@&quot;sunrise&quot;</span><span class="o">:</span> <span class="s">@&quot;sys.sunrise&quot;</span><span class="p">,</span>
+</span><span class='line'>             <span class="s">@&quot;sunset&quot;</span><span class="o">:</span> <span class="s">@&quot;sys.sunset&quot;</span><span class="p">,</span>
+</span><span class='line'>             <span class="s">@&quot;conditionDescription&quot;</span><span class="o">:</span> <span class="s">@&quot;weather.description&quot;</span><span class="p">,</span>
+</span><span class='line'>             <span class="s">@&quot;condition&quot;</span><span class="o">:</span> <span class="s">@&quot;weather.main&quot;</span><span class="p">,</span>
+</span><span class='line'>             <span class="s">@&quot;icon&quot;</span><span class="o">:</span> <span class="s">@&quot;weather.icon&quot;</span><span class="p">,</span>
+</span><span class='line'>             <span class="s">@&quot;windBearing&quot;</span><span class="o">:</span> <span class="s">@&quot;wind.deg&quot;</span><span class="p">,</span>
+</span><span class='line'>             <span class="s">@&quot;windSpeed&quot;</span><span class="o">:</span> <span class="s">@&quot;wind.speed&quot;</span>
+</span><span class='line'>             <span class="p">};</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ol>
@@ -167,7 +171,7 @@ $(document).bind('DOMNodeInserted', function(event) {
 </ol>
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -175,33 +179,33 @@ $(document).bind('DOMNodeInserted', function(event) {
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>+ (NSValueTransformer *)dateJSONTransformer {
-</span><span class='line'>    // 1
-</span><span class='line'>    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
-</span><span class='line'>        return [NSDate dateWithTimeIntervalSince1970:str.floatValue];
-</span><span class='line'>    } reverseBlock:^(NSDate *date) {
-</span><span class='line'>        return [NSString stringWithFormat:@"%f",[date timeIntervalSince1970]];
-</span><span class='line'>    }];
-</span><span class='line'>}
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">+</span> <span class="p">(</span><span class="n">NSValueTransformer</span> <span class="o">*</span><span class="p">)</span><span class="nf">dateJSONTransformer</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// 1</span>
+</span><span class='line'>    <span class="k">return</span> <span class="p">[</span><span class="n">MTLValueTransformer</span> <span class="nl">reversibleTransformerWithForwardBlock:</span><span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="p">[</span><span class="n">NSDate</span> <span class="nl">dateWithTimeIntervalSince1970:</span><span class="n">str</span><span class="p">.</span><span class="n">floatValue</span><span class="p">];</span>
+</span><span class='line'>    <span class="p">}</span> <span class="nl">reverseBlock:</span><span class="o">^</span><span class="p">(</span><span class="n">NSDate</span> <span class="o">*</span><span class="n">date</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="p">[</span><span class="n">NSString</span> <span class="nl">stringWithFormat:</span><span class="s">@&quot;%f&quot;</span><span class="p">,[</span><span class="n">date</span> <span class="n">timeIntervalSince1970</span><span class="p">]];</span>
+</span><span class='line'>    <span class="p">}];</span>
+</span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
 <p>对JSON数组的示例</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>+ (NSValueTransformer *)conditionDescriptionJSONTransformer {
-</span><span class='line'>    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray *values) {
-</span><span class='line'>        return [values firstObject];
-</span><span class='line'>    } reverseBlock:^(NSString *str) {
-</span><span class='line'>        return @[str];
-</span><span class='line'>    }];
-</span><span class='line'>}
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">+</span> <span class="p">(</span><span class="n">NSValueTransformer</span> <span class="o">*</span><span class="p">)</span><span class="nf">conditionDescriptionJSONTransformer</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">return</span> <span class="p">[</span><span class="n">MTLValueTransformer</span> <span class="nl">reversibleTransformerWithForwardBlock:</span><span class="o">^</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">values</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="p">[</span><span class="n">values</span> <span class="n">firstObject</span><span class="p">];</span>
+</span><span class='line'>    <span class="p">}</span> <span class="nl">reverseBlock:</span><span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="err">@</span><span class="p">[</span><span class="n">str</span><span class="p">];</span>
+</span><span class='line'>    <span class="p">}];</span>
+</span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
