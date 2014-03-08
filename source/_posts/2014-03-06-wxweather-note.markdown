@@ -6,11 +6,11 @@ comments: true
 categories: 
 ---
 
+[教程1地址](http://sjpsega.com/blog/2014/02/11/yi--ios-7-best-practices-part-1/)
+[教程2地址](http://sjpsega.com/blog/2014/02/15/yi--ios-7-best-practices-part-2/)
 
-###学习天气Demo
-[教程地址](http://sjpsega.com/blog/2014/02/11/yi--ios-7-best-practices-part-1/)
-
-####使用MTLModel
+<!--more-->
+####使用[MTLModel](https://github.com/MantleFramework/Mantle)
 ######作用将Json转化为Objc对象,使用方法
 1. 导入头文件Mantle.h
 2. 超类继承MTLModel,并实现协议MTLJSONSerializing>
@@ -61,4 +61,26 @@ categories:
     }];
 }
 
+```
+
+
+iOS单例模式代码创建
+
+1. .h文件中添加
+
+``` objc
++ (instancetype)sharedManager;
+```
+
+2. .m文件中添加
+
+``` objc
++ (instancetype)sharedManager {
+    static id _sharedManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedManager = [[self alloc] init];
+    });
+    return _sharedManager;
+}
 ```
