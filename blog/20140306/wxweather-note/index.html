@@ -9,7 +9,8 @@
   <meta name="author" content="tsmoon">
 
   
-  <meta name="description" content="学习天气Demo 教程地址 使用MTLModel 作用将Json转化为Objc对象,使用方法 导入头文件Mantle.h
+  <meta name="description" content="教程1地址
+教程2地址 使用MTLModel 作用将Json转化为Objc对象,使用方法 导入头文件Mantle.h
 超类继承MTLModel,并实现协议MTLJSONSerializing>
 json字段到ObjC字段映射对应,实现静态方法+(NSDictionary*) &hellip;">
   
@@ -111,14 +112,13 @@ $(document).bind('DOMNodeInserted', function(event) {
   </header>
 
 
-<div class="entry-content"><h3>学习天气Demo</h3>
-
-<p><a href="http://sjpsega.com/blog/2014/02/11/yi--ios-7-best-practices-part-1/">教程地址</a></p>
+<div class="entry-content"><p><a href="http://sjpsega.com/blog/2014/02/11/yi--ios-7-best-practices-part-1/">教程1地址</a>
+<a href="http://sjpsega.com/blog/2014/02/15/yi--ios-7-best-practices-part-2/">教程2地址</a></p>
 
 <!--more-->
 
 
-<h4>使用MTLModel</h4>
+<h4>使用<a href="https://github.com/MantleFramework/Mantle">MTLModel</a></h4>
 
 <h6>作用将Json转化为Objc对象,使用方法</h6>
 
@@ -205,6 +205,42 @@ $(document).bind('DOMNodeInserted', function(event) {
 </span><span class='line'>    <span class="p">}</span> <span class="nl">reverseBlock:</span><span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span><span class="p">)</span> <span class="p">{</span>
 </span><span class='line'>        <span class="k">return</span> <span class="err">@</span><span class="p">[</span><span class="n">str</span><span class="p">];</span>
 </span><span class='line'>    <span class="p">}];</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>iOS单例模式代码创建</p>
+
+<ol>
+<li>.h文件中添加</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">sharedManager</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>.m文件中添加</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">sharedManager</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">static</span> <span class="kt">id</span> <span class="n">_sharedManager</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">static</span> <span class="n">dispatch_once_t</span> <span class="n">onceToken</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">dispatch_once</span><span class="p">(</span><span class="o">&amp;</span><span class="n">onceToken</span><span class="p">,</span> <span class="o">^</span><span class="p">{</span>
+</span><span class='line'>        <span class="n">_sharedManager</span> <span class="o">=</span> <span class="p">[[</span><span class="n">self</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">_sharedManager</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
