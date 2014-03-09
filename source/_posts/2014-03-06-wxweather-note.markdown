@@ -63,6 +63,11 @@ categories:
 
 ```
 
+*** 注意Mantle不同版本库代码不相同,存在bug ***
+
+图片模糊组件 LBBlurredImage组件
+
+
 
 iOS单例模式代码创建
 
@@ -84,3 +89,11 @@ iOS单例模式代码创建
     return _sharedManager;
 }
 ```
+######其他
+
+* [xcode5常用插件](http://www.cocoachina.com/applenews/devnews/2013/0918/7022.html)
+* [自己动手实现tablview](http://blog.jobbole.com/61101/)
+* [iOS 开发：绘制像素到屏幕](http://segmentfault.com/a/1190000000390012)
+* [objc.io翻译玩转字符串](http://iosinit.com/?p=854)
+* [iOS 7 UI交互设计 大量视频文章](https://developer.apple.com/design/)
+* [滚动插件,启动动画](https://github.com/5sw/SWParallaxScrollView)
