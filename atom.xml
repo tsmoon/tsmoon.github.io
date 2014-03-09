@@ -4,7 +4,7 @@
   <title><![CDATA[海空的技术博客]]></title>
   <link href="http://tsmoon.github.io/atom.xml" rel="self"/>
   <link href="http://tsmoon.github.io/"/>
-  <updated>2014-03-08T19:30:01+08:00</updated>
+  <updated>2014-03-09T21:35:57+08:00</updated>
   <id>http://tsmoon.github.io/</id>
   <author>
     <name><![CDATA[tsmoon]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[微信实施及相关方案]]></title>
+    <link href="http://tsmoon.github.io/blog/20140309/wx-bind-custom-login/"/>
+    <updated>2014-03-09T21:00:48+08:00</updated>
+    <id>http://tsmoon.github.io/blog/20140309/wx-bind-custom-login</id>
+    <content type="html"><![CDATA[<h3>实现类似招行微信/南航微信,将微信账号与企业后台系统账号进行绑定功能.</h3>
+
+<!--more-->
+
+
+<p>实施方案:</p>
+
+<ol>
+<li>对于企业外部客户,可参考文章 <a href="http://abyssly.com/2013/09/20/wx_bind/">微信公众号开发中的用户账号绑定</a>,文中讲很详细,强调一点,互联网安全很重要,建议全程<strong>https</strong></li>
+<li>对于企业内部用户,参看引用.优点,避免从外部集成验证,降低风险.适合企业内部
+
+<blockquote><p><a href="http://blog.sina.com.cn/s/blog_6bdb51be0101juw7.html">原文</a> 只要在OA系统中让每个用户绑定微信的OpenID，既可以来在微信上显示ＯＡ的数据，代办的事项，需要阅读的文章，通知等等，也有人会问，那用户怎么知道自己的微信OpenID呢，其实也很容易，员工只要关注企业的微信公共账号，那么输入一个事先定义好的数字或字母，比如０，那么系统将用户的OpenID号返回给微信就行，用户在将得到的OpenID绑定在办公系统上。</p></blockquote></li>
+</ol>
+
+
+<p>微信企业常见案例:</p>
+
+<ul>
+<li>招商银行信用卡中心</li>
+<li>中国南方航空/南方航空</li>
+</ul>
+
+
+<p>微信企业应用场景:</p>
+
+<ul>
+<li>在线客户</li>
+<li>基于问答式服务</li>
+<li>手机网站入口(海南航空)</li>
+<li>微信随手拍</li>
+<li>微信企业简历收集面试.</li>
+<li>微信企业新闻(图文新闻)</li>
+<li><em>企业手机门户入口,集成企业后端系统</em>.</li>
+<li>待补充整理</li>
+</ul>
+
+
+<p>微信常见使用方法:</p>
+
+<ul>
+<li>基于微信api提供查询,问答,图文消息,推送服务</li>
+<li>使用微信作为入口,跳转到企业自己的手机页面</li>
+</ul>
+
+
+<h4>总结:多看多抄袭多总结</h4>
+
+<p class='post-footer'>
+            原始地址
+            <a href='http://tsmoon.github.io/blog/20140309/wx-bind-custom-login/'>http://tsmoon.github.io/blog/20140309/wx-bind-custom-login/</a><br/>
+            &nbsp;written by <a href='http://tsmoon.github.io'>tsmoon</a>
+            &nbsp;posted at <a href='http://tsmoon.github.io'>http://tsmoon.github.io</a>
+            </p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[学习天气Demo笔记]]></title>
