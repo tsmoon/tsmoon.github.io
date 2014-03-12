@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: iOS | 海空的技术博客]]></title>
+  <link href="http://tsmoon.github.io/blog/categories/ios/atom.xml" rel="self"/>
+  <link href="http://tsmoon.github.io/"/>
+  <updated>2014-03-12T18:29:25+08:00</updated>
+  <id>http://tsmoon.github.io/</id>
+  <author>
+    <name><![CDATA[tsmoon]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[学习天气Demo笔记]]></title>
+    <link href="http://tsmoon.github.io/blog/20140306/wxweather-note/"/>
+    <updated>2014-03-06T20:07:03+08:00</updated>
+    <id>http://tsmoon.github.io/blog/20140306/wxweather-note</id>
+    <content type="html"><![CDATA[<p><a href="http://sjpsega.com/blog/2014/02/11/yi--ios-7-best-practices-part-1/">教程1地址</a>
+<a href="http://sjpsega.com/blog/2014/02/15/yi--ios-7-best-practices-part-2/">教程2地址</a></p>
+
+<!--more-->
+
+
+<h4>使用<a href="https://github.com/MantleFramework/Mantle">MTLModel</a></h4>
+
+<h6>作用将Json转化为Objc对象,使用方法</h6>
+
+<ol>
+<li>导入头文件Mantle.h</li>
+<li>超类继承MTLModel,并实现协议MTLJSONSerializing></li>
+<li>json字段到ObjC字段映射对应,实现静态方法+(NSDictionary*) JSONKeyPathsByPropertyKey</li>
+</ol>
+
+
+<p>``` objc
++(NSDictionary*) JSONKeyPathsByPropertyKey{</p>
+
+<pre><code>return @{
+         @"date": @"dt",
+         @"locationName": @"name",
+         @"humidity": @"main.humidity",
+         @"temperature": @"main.temp",
+         @"tempHigh": @"main.temp_max",
+         @"tempLow": @"main.temp_min",
+         @"sunrise": @"sys.sunrise",
+         @"sunset": @"sys.sunset",
+         @"conditionDescription": @"weather.description",
+         @"condition": @"weather.main",
+         @"icon": @"weather.icon",
+         @"windBearing": @"wind.deg",
+         @"windSpeed": @"wind.speed"
+         };
+</code></pre>
+
+<p>}
+```</p>
+
+<ol>
+<li>若属性字段需要转换,定义静态"属性名+JSONTransformer"方法,此方法用来对特定属性名称进行转化(若多层级中属性名相同,但转换不同,如何处理?)</li>
+</ol>
+
+
+<p>``` objc
++ (NSValueTransformer *)dateJSONTransformer {</p>
+
+<pre><code>// 1
+return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
+    return [NSDate dateWithTimeIntervalSince1970:str.floatValue];
+} reverseBlock:^(NSDate *date) {
+    return [NSString stringWithFormat:@"%f",[date timeIntervalSince1970]];
+}];
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<p>对JSON数组的示例</p>
+
+<p>``` objc
++ (NSValueTransformer *)conditionDescriptionJSONTransformer {</p>
+
+<pre><code>return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray *values) {
+    return [values firstObject];
+} reverseBlock:^(NSString *str) {
+    return @[str];
+}];
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<p><strong><em> 注意Mantle不同版本库代码不相同,存在bug </em></strong></p>
+
+<p>图片模糊组件 LBBlurredImage组件</p>
+
+<p>iOS单例模式代码创建</p>
+
+<ol>
+<li>.h文件中添加</li>
+</ol>
+
+
+<p><code>objc
++ (instancetype)sharedManager;
+</code></p>
+
+<ol>
+<li>.m文件中添加</li>
+</ol>
+
+
+<p>``` objc
++ (instancetype)sharedManager {</p>
+
+<pre><code>static id _sharedManager = nil;
+static dispatch_once_t onceToken;
+dispatch_once(&amp;onceToken, ^{
+    _sharedManager = [[self alloc] init];
+});
+return _sharedManager;
+</code></pre>
+
+<p>}
+```</p>
+
+<h6>其他</h6>
+
+<ul>
+<li><a href="http://www.cocoachina.com/applenews/devnews/2013/0918/7022.html">xcode5常用插件</a></li>
+<li><a href="http://blog.jobbole.com/61101/">自己动手实现tablview</a></li>
+<li><a href="http://segmentfault.com/a/1190000000390012">iOS 开发：绘制像素到屏幕</a></li>
+<li><a href="http://iosinit.com/?p=854">objc.io翻译玩转字符串</a></li>
+<li><a href="https://developer.apple.com/design/">iOS 7 UI交互设计 大量视频文章</a></li>
+<li><a href="https://github.com/5sw/SWParallaxScrollView">滚动插件,启动动画</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
