@@ -3,7 +3,7 @@ layout: post
 title: "微信实施及相关方案"
 date: 2014-03-09 21:00:48 +0800
 comments: true
-categories: 
+categories: [Java]
 ---
 
 ### 实现类似招行微信/南航微信,将微信账号与企业后台系统账号进行绑定功能.

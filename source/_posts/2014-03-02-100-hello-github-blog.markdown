@@ -3,7 +3,7 @@ layout: post
 title: "GitHub搭建博客"
 date: 2014-03-02 16:14:29 +0800
 comments: true
-categories: [github,blog]
+categories: [blog]
 
 ---
 github博客搭建方法及常用命令

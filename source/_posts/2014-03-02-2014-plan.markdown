@@ -4,7 +4,7 @@ title: "2014年计划"
 date: 2014-03-02 19:56:40 +0800
 comments: true
 published: false
-categories: 
+categories: []
 ---
 前言:给自己定个目标和计划
 

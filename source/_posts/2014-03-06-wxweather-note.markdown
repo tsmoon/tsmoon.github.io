@@ -3,7 +3,7 @@ layout: post
 title: "学习天气Demo笔记"
 date: 2014-03-06 20:07:03 +0800
 comments: true
-categories: 
+categories: [iOS]
 ---
 
 [教程1地址](http://sjpsega.com/blog/2014/02/11/yi--ios-7-best-practices-part-1/)

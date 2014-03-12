@@ -3,7 +3,7 @@ layout: post
 title: "好的博客和文档"
 date: 2014-03-02 19:52:20 +0800
 comments: true
-categories: 
+categories: [mac]
 ---
 ####好的文章和资料,替代本地收藏夹
 <!-- more -->
