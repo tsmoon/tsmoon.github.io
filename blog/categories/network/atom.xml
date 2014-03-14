@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: network | 海空的技术博客]]></title>
+  <link href="http://tsmoon.github.io/blog/categories/network/atom.xml" rel="self"/>
+  <link href="http://tsmoon.github.io/"/>
+  <updated>2014-03-14T19:27:17+08:00</updated>
+  <id>http://tsmoon.github.io/</id>
+  <author>
+    <name><![CDATA[tsmoon]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[iOS http编程入门]]></title>
+    <link href="http://tsmoon.github.io/blog/20140313/ios-network/"/>
+    <updated>2014-03-13T18:04:15+08:00</updated>
+    <id>http://tsmoon.github.io/blog/20140313/ios-network</id>
+    <content type="html"><![CDATA[<h3>iOS 网络系统结构</h3>
+
+<h3>常用网络组建</h3>
+
+<ul>
+<li><a href="http://www.infoq.com/cn/articles/afn_vs_asi">对比iOS网络组件：AFNetworking VS ASIHTTPRequest</a></li>
+</ul>
+
+
+<h3>ASIHTTPRequest</h3>
+
+<ul>
+<li><a href="http://allseeing-i.com/ASIHTTPRequest/Setup-instructions">官方文档</a></li>
+</ul>
+
+
+<h3>Network Reachability</h3>
+
+<blockquote><p>This class has two important features: network status transition notifications and easy reachability testing for each server your app touches. Because radios lose connections all of the time, these dynamic notifications help your user understand why they cannot use the networking features of your app.</p></blockquote>
+
+<p>参考</p>
+
+<ul>
+<li><a href="http://blog.ddg.com/?p=24">Applce&rsquo;s sample</a></li>
+<li><a href="http://blog.ddg.com/?p=24">Reengineered sample</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

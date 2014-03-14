@@ -4,7 +4,7 @@
   <title><![CDATA[海空的技术博客]]></title>
   <link href="http://tsmoon.github.io/atom.xml" rel="self"/>
   <link href="http://tsmoon.github.io/"/>
-  <updated>2014-03-12T18:29:25+08:00</updated>
+  <updated>2014-03-14T19:27:17+08:00</updated>
   <id>http://tsmoon.github.io/</id>
   <author>
     <name><![CDATA[tsmoon]]></name>
@@ -12,6 +12,64 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[reactivecocoa-note]]></title>
+    <link href="http://tsmoon.github.io/blog/20140314/reactivecocoa-note/"/>
+    <updated>2014-03-14T19:26:40+08:00</updated>
+    <id>http://tsmoon.github.io/blog/20140314/reactivecocoa-note</id>
+    <content type="html"><![CDATA[<p class='post-footer'>
+            原始地址
+            <a href='http://tsmoon.github.io/blog/20140314/reactivecocoa-note/'>http://tsmoon.github.io/blog/20140314/reactivecocoa-note/</a><br/>
+            &nbsp;written by <a href='http://tsmoon.github.io'>tsmoon</a>
+            &nbsp;posted at <a href='http://tsmoon.github.io'>http://tsmoon.github.io</a>
+            </p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS http编程入门]]></title>
+    <link href="http://tsmoon.github.io/blog/20140313/ios-network/"/>
+    <updated>2014-03-13T18:04:15+08:00</updated>
+    <id>http://tsmoon.github.io/blog/20140313/ios-network</id>
+    <content type="html"><![CDATA[<h3>iOS 网络系统结构</h3>
+
+<h3>常用网络组建</h3>
+
+<ul>
+<li><a href="http://www.infoq.com/cn/articles/afn_vs_asi">对比iOS网络组件：AFNetworking VS ASIHTTPRequest</a></li>
+</ul>
+
+
+<h3>ASIHTTPRequest</h3>
+
+<ul>
+<li><a href="http://allseeing-i.com/ASIHTTPRequest/Setup-instructions">官方文档</a></li>
+</ul>
+
+
+<h3>Network Reachability</h3>
+
+<blockquote><p>This class has two important features: network status transition notifications and easy reachability testing for each server your app touches. Because radios lose connections all of the time, these dynamic notifications help your user understand why they cannot use the networking features of your app.</p></blockquote>
+
+<p>参考</p>
+
+<ul>
+<li><a href="http://blog.ddg.com/?p=24">Applce&rsquo;s sample</a></li>
+<li><a href="http://blog.ddg.com/?p=24">Reengineered sample</a></li>
+</ul>
+
+
+<p class='post-footer'>
+            原始地址
+            <a href='http://tsmoon.github.io/blog/20140313/ios-network/'>http://tsmoon.github.io/blog/20140313/ios-network/</a><br/>
+            &nbsp;written by <a href='http://tsmoon.github.io'>tsmoon</a>
+            &nbsp;posted at <a href='http://tsmoon.github.io'>http://tsmoon.github.io</a>
+            </p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[微信实施及相关方案]]></title>
