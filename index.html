@@ -9,7 +9,8 @@
   <meta name="author" content="tsmoon">
 
   
-  <meta name="description" content=" 原始地址 http://tsmoon.github.io/blog/20140314/reactivecocoa-note/ &nbsp;written by tsmoon &nbsp;posted at http://tsmoon.github.io ">
+  <meta name="description" content="内存管理 Apple&rsquo;s Memory management 规则描述1 当你使用new,alloc或copy创建对象时，对象的count retain到1。你一定要负责把这个对象release 或 autolease掉。这样当它的生命周期结束时，它才能清空。
+当你使用 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,7 +90,84 @@ $(document).bind('DOMNodeInserted', function(event) {
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/20140314/reactivecocoa-note/">Reactivecocoa-note</a></h1>
+      <h1 class="entry-title"><a href="/blog/20140316/memory-manage/">iOS内存管理</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-16T17:14:04+08:00" pubdate data-updated="true">Mar 16<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h6>内存管理</h6>
+
+<ul>
+<li><a href="https://developer.apple.com/library/ios/documentation/general/conceptual/devpedia-cocoacore/MemoryManagement.html">Apple&rsquo;s Memory management</a></li>
+</ul>
+
+
+<h5>规则描述1</h5>
+
+<ol>
+<li><p>当你使用new,alloc或copy创建对象时，对象的count retain到1。你一定要负责把这个对象release 或 autolease掉。这样当它的生命周期结束时，它才能清空。</p></li>
+<li><p>当你使用 其他方法获得一个对象时，你可以认为它已经retain了一个count，并且autolease掉了。你不用考虑和它相关的清理问题 。但是如果你想保留这个对象，那么你需要retain它，并且要确保之后你release了这个对象。</p></li>
+<li><p>如果你retain一个对象，你最终总是需要release或者autolease它。</p></li>
+<li><p>如果这个对象是你alloc或者new出来的，你就需要调用release。如果使用autorelease，那么仅在发生过retain的时候release一次</p></li>
+</ol>
+
+
+<h5>规则描述2</h5>
+
+<ol>
+<li>&ldquo;谁创建,谁释放&rdquo;.如果通过alloc,new,(mutable)copy来创建一个对象,你必须调用release或autorelease来释放.反之,你不创建,则不释放.方法内返回对象一般用autorrelease.</li>
+<li>谁retain,谁release.只要你调用了retain,无论这个对象是如何生成的,都必须调用release</li>
+<li>一般来说,出了alloc,new或copy之外的方法创建的对象都被声明了autorelease.(参看autorelease 链接1)</li>
+</ol>
+
+
+<h5>Autorelease</h5>
+
+<ol>
+<li><a href="http://www.asgteach.com/blog/?p=73">iOS Memory Management: Using Autorelease</a></li>
+</ol>
+
+
+<p>　</p>
+
+<p class='post-footer'>
+            原始地址
+            <a href='http://tsmoon.github.io/blog/20140316/memory-manage/'>http://tsmoon.github.io/blog/20140316/memory-manage/</a><br/>
+            &nbsp;written by <a href='http://tsmoon.github.io'>tsmoon</a>
+            &nbsp;posted at <a href='http://tsmoon.github.io'>http://tsmoon.github.io</a>
+            </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/20140314/reactivecocoa-note/">ReactiveCocoa学习</a></h1>
     
     
       <p class="meta">
@@ -112,12 +190,19 @@ $(document).bind('DOMNodeInserted', function(event) {
   </header>
 
 
-  <div class="entry-content"><p class='post-footer'>
-            原始地址
-            <a href='http://tsmoon.github.io/blog/20140314/reactivecocoa-note/'>http://tsmoon.github.io/blog/20140314/reactivecocoa-note/</a><br/>
-            &nbsp;written by <a href='http://tsmoon.github.io'>tsmoon</a>
-            &nbsp;posted at <a href='http://tsmoon.github.io'>http://tsmoon.github.io</a>
-            </p>
+  <div class="entry-content"><h6>资料链接</h6>
+
+<ul>
+<li><a href="https://github.com/ReactiveCocoa/ReactiveCocoa/blob/master/Documentation/FrameworkOverview.md">ReactiveCocoa github</a></li>
+<li><a href="http://www.cnblogs.com/sunnyxx/p/3547754.html">ReactiveCocoa 系列文章</a></li>
+<li><a href="http://blog.segmentfault.com/erliu/1190000000407346">RAC FrameworkOverview 翻译</a></li>
+<li><a href="http://blog.leezhong.com/ios/2013/06/19/frp-reactivecocoa.html">ReactiveCocoa与Functional Reactive Programming</a><p class='post-footer'>
+          原始地址
+          <a href='http://tsmoon.github.io/blog/20140314/reactivecocoa-note/'><a href="http://tsmoon.github.io/blog/20140314/reactivecocoa-note/">http://tsmoon.github.io/blog/20140314/reactivecocoa-note/</a></a><br/>
+          &nbsp;written by <a href='http://tsmoon.github.io'>tsmoon</a>
+          &nbsp;posted at <a href='http://tsmoon.github.io'><a href="http://tsmoon.github.io">http://tsmoon.github.io</a></a>
+          </p></li>
+</ul>
 
 </div>
   
@@ -441,7 +526,11 @@ $(document).bind('DOMNodeInserted', function(event) {
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/20140314/reactivecocoa-note/">reactivecocoa-note</a>
+        <a href="/blog/20140316/memory-manage/">iOS内存管理</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20140314/reactivecocoa-note/">ReactiveCocoa学习</a>
       </li>
     
       <li class="post">
@@ -454,10 +543,6 @@ $(document).bind('DOMNodeInserted', function(event) {
     
       <li class="post">
         <a href="/blog/20140306/wxweather-note/">学习天气Demo笔记</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20140302/good-link/">好的博客和文档</a>
       </li>
     
   </ul>
